@@ -2,8 +2,13 @@ import { useState, useEffect } from "react";
 
 import Pokedex from "./components/Pokedex";
 
+export interface pokemonSchema {
+  name: string;
+  url: string;
+}
+
 function App() {
-  const [pokeData, setPokeData] = useState([]);
+  const [pokeData, setPokeData] = useState<pokemonSchema[]>([]);
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/")
