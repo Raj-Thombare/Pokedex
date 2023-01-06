@@ -1,4 +1,4 @@
-import { pokemonSchema } from "../App";
+import { pokemonSchema } from "../models/interfaces";
 
 const Pokelist: React.FC<{ onPokeData: pokemonSchema[] }> = ({
   onPokeData,

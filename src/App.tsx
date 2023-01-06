@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 
 import Pokedex from "./components/Pokedex";
+import { pokemonSchema } from "./models/interfaces";
 
-export interface pokemonSchema {
-  name: string;
-  url: string;
-}
 
 function App() {
   const [pokeData, setPokeData] = useState<pokemonSchema[]>([]);
