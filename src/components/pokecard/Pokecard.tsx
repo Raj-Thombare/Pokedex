@@ -3,16 +3,17 @@ import { pokemonListSchema } from "../../models/interfaces";
 
 import classes from "./Pokecard.module.css";
 
-const Pokecard: React.FC<{ name: string; url: string }> = ({ name, url }) => {
+const Pokecard: React.FC<{ name: string; spriteUrl: string }> = ({
+  name,
+  spriteUrl,
+}) => {
   const [pokemon, setPokemon] = useState<pokemonListSchema>();
 
   useEffect(() => {
-    fetch(url)
+    fetch(spriteUrl)
       .then((response) => response.json())
       .then((data) => setPokemon(data));
   }, []);
-
-  console.log(pokemon);
   return (
     <div className={classes.pokecard}>
       <img

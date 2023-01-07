@@ -10,7 +10,11 @@ const Pokelist: React.FC<{ pokeData: pokemonDataSchema[] }> = ({
     <div className={classes.pokelist}>
       {pokeData.map((pokemon) => {
         return (
-          <Pokecard key={pokemon.name} name={pokemon.name} url={pokemon.url} />
+          <Pokecard
+            key={pokemon.name}
+            name={pokemon.name}
+            spriteUrl={pokemon.url}
+          />
         );
       })}
     </div>
