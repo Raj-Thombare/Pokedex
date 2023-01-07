@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Pokedex from "./components/pokedex/Pokedex";
-import { pokemonListSchema } from "./models/interfaces";
+import { pokemonDataSchema } from "./models/interfaces";
 
 const App: React.FC = () => {
-  const [pokeData, setPokeData] = useState<pokemonListSchema[]>([]);
+  const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon")

@@ -1,4 +1,4 @@
-export interface pokemonListSchema {
+export interface pokemonDataSchema {
   name: string;
   url: string;
 }
@@ -23,9 +23,7 @@ interface sprite {
   front_default: string;
 }
 
-export interface pokemonCardSchema {
+export interface pokemonListSchema {
   name: string;
   sprites: sprite;
 }
-
-

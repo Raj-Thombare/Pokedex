@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { pokemonCardSchema } from "../../models/interfaces";
+import { pokemonListSchema } from "../../models/interfaces";
 
 import classes from "./Pokecard.module.css";
 
 const Pokecard: React.FC<{ name: string; url: string }> = ({ name, url }) => {
-  const [pokemon, setPokemon] = useState<pokemonCardSchema>();
+  const [pokemon, setPokemon] = useState<pokemonListSchema>();
 
   useEffect(() => {
     fetch(url)

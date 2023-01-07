@@ -1,9 +1,9 @@
-import { pokemonListSchema } from "../../models/interfaces";
+import { pokemonDataSchema } from "../../models/interfaces";
 import Pokecard from "../pokecard/Pokecard";
 
 import classes from "./Pokelist.module.css";
 
-const Pokelist: React.FC<{ pokeData: pokemonListSchema[] }> = ({
+const Pokelist: React.FC<{ pokeData: pokemonDataSchema[] }> = ({
   pokeData,
 }) => {
   return (
