@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 
 import Pokedex from "./components/Pokedex";
-import { pokemonSchema } from "./models/interfaces";
+import { pokemonListSchema } from "./models/interfaces";
 
-
-function App() {
-  const [pokeData, setPokeData] = useState<pokemonSchema[]>([]);
+const App: React.FC = () => {
+  const [pokeData, setPokeData] = useState<pokemonListSchema[]>([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/")
+    fetch("https://pokeapi.co/api/v2/pokemon")
       .then((response) => response.json())
       .then((data) => setPokeData(data.results));
   }, []);
@@ -19,6 +18,6 @@ function App() {
       <Pokedex onPokeData={pokeData} />
     </div>
   );
-}
+};
 
 export default App;

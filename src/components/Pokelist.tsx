@@ -1,16 +1,19 @@
-import { pokemonSchema } from "../models/interfaces";
+import { pokemonListSchema } from "../models/interfaces";
 
-const Pokelist: React.FC<{ onPokeData: pokemonSchema[] }> = ({
-  onPokeData,
+import React from "react";
+
+const Pokelist: React.FC<{ pokeData: pokemonListSchema[] }> = ({
+  pokeData,
 }) => {
+  console.log(pokeData);
   return (
     <div>
-      {onPokeData.map((pokemon) => {
-        <div>
-          <h3>{pokemon.name}</h3>
-          <img src={pokemon.url} />
-        </div>;
-      })}
+      <h5>Pokelist: </h5>
+      <>
+        {pokeData.map((pok) => {
+          return <div>{pok.name}</div>;
+        })}
+      </>
     </div>
   );
 };

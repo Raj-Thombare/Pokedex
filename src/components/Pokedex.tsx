@@ -1,14 +1,15 @@
-import { pokemonSchema } from "../models/interfaces";
+import { pokemonListSchema } from "../models/interfaces";
 import Pokelist from "./Pokelist";
 
-const Pokedex: React.FC<{ onPokeData: pokemonSchema[] }> = ({ onPokeData }) => {
-  console.log(onPokeData);
+const Pokedex: React.FC<{ onPokeData: pokemonListSchema[] }> = ({
+  onPokeData,
+}) => {
   return (
     <div>
       {/* search */}
       {/* pokeList */}
-      <Pokelist onPokeData={onPokeData} />
-      {/* pokeSearch */}
+      <Pokelist pokeData={onPokeData} />
+      {/* pokemon */}
     </div>
   );
 };

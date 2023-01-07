@@ -1,4 +1,4 @@
-export interface pokemonSchema {
+export interface pokemonListSchema {
   name: string;
   url: string;
 }
