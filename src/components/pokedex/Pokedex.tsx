@@ -1,5 +1,5 @@
 import { pokemonListSchema } from "../../models/interfaces";
-import Pokelist from "../Pokelist";
+import Pokelist from "../pokelist/Pokelist";
 
 import classes from "./Pokedex.module.css";
 

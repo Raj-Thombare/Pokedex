@@ -1,14 +1,14 @@
-import { pokemonListSchema } from "../models/interfaces";
-import Pokecard from "./pokecard/Pokecard";
-import React from "react";
+import { pokemonListSchema } from "../../models/interfaces";
+import Pokecard from "../pokecard/Pokecard";
+
+import classes from "./Pokelist.module.css";
 
 const Pokelist: React.FC<{ pokeData: pokemonListSchema[] }> = ({
   pokeData,
 }) => {
-  // console.log(pokeData);
+  console.log(pokeData);
   return (
-    <div>
-      <h5>Pokelist: </h5>
+    <div className={classes.pokelist}>
       {pokeData.map((pokemon) => {
         return (
           <Pokecard key={pokemon.name} name={pokemon.name} url={pokemon.url} />
