@@ -5,7 +5,7 @@ import { pokemonDataSchema } from "./models/interfaces";
 
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
-  const [searchedField, setSearchedField] = useState();
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon")
@@ -14,9 +14,11 @@ const App: React.FC = () => {
   }, []);
 
   const searchPokemonHandler = (text: string) => {
-    const searchedPokemon = pokeData.filter((pokemon) =>
-      pokemon.name.toLowerCase().includes(text.toLowerCase())
-    );
+    const searchedPokemon = pokeData.filter((pokemon) => {
+      return (
+        pokemon.name && pokemon.name.toLowerCase().includes(text.toLowerCase())
+      );
+    });
     setPokeData(searchedPokemon);
   };
 

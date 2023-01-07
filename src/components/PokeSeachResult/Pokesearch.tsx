@@ -1,7 +1,7 @@
 import classes from "./Pokeseach.module.css";
 
 const Pokesearch = () => {
-  return <div>Pokesearch</div>;
+  return <div>Pokedex</div>;
 };
 
 export default Pokesearch;

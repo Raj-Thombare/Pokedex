@@ -7,7 +7,7 @@ const Searchbox: React.FC<{ searchPokemon: (text: string) => void }> = ({
     <input
       className={classes.search}
       type="text"
-      placeholder="search pokemon..."
+      placeholder="Search Pokemon..."
       onChange={(e) => searchPokemon(e.target.value)}
     />
   );
