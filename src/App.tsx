@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Pokedex from "./components/Pokedex";
+import Pokedex from "./components/pokedex/Pokedex";
 import { pokemonListSchema } from "./models/interfaces";
 
 const App: React.FC = () => {

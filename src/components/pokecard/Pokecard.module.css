@@ -15,6 +15,10 @@
     flex-grow: 1;
 }
 
+.pokecard p {
+    text-transform: capitalize;
+}
+
 .pokecard:hover {
     transform: scale(1.05);
 }
