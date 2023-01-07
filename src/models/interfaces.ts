@@ -20,7 +20,7 @@ export interface pokemonInfoSchema {
 }
 
 interface sprite {
-  back_default: string;
+  front_default: string;
 }
 
 export interface pokemonCardSchema {

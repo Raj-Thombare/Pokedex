@@ -12,13 +12,13 @@ const Pokecard: React.FC<{ name: string; url: string }> = ({ name, url }) => {
       .then((data) => setPokemon(data));
   }, []);
 
-  console.log();
+  console.log(pokemon);
   return (
     <div className={classes.pokecard}>
       <img
         className="pokemon-sprite"
         alt="pokemon"
-        src={pokemon?.sprites.back_default}
+        src={pokemon?.sprites.front_default}
       />
       <p>{pokemon?.name}</p>
     </div>

@@ -6,7 +6,6 @@ import classes from "./Pokelist.module.css";
 const Pokelist: React.FC<{ pokeData: pokemonListSchema[] }> = ({
   pokeData,
 }) => {
-  console.log(pokeData);
   return (
     <div className={classes.pokelist}>
       {pokeData.map((pokemon) => {
