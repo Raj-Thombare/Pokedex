@@ -1,8 +1,7 @@
 import { pokemonDataSchema } from "../../models/interfaces";
 import Pokelist from "../pokelist/Pokelist";
 import Searchbox from "../searchBox/Searchbox";
-import Pokesearch from "../PokeSeachResult/Pokesearch";
-
+import PokeSearch from "../PokeSeachResult/PokeSearch";
 import classes from "./Pokedex.module.css";
 
 const Pokedex: React.FC<{
@@ -16,7 +15,7 @@ const Pokedex: React.FC<{
         <Pokelist pokeData={onPokeData} />
       </div>
       <div className={classes.pokedexSearch}>
-        <Pokesearch />
+        <PokeSearch />
       </div>
     </div>
   );

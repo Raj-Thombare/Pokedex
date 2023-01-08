@@ -1,7 +1,11 @@
-import classes from "./Pokeseach.module.css";
+import classes from "./PokeSearch.module.css";
 
-const Pokesearch = () => {
-  return <div>Pokedex</div>;
+const PokeSearch = () => {
+  return (
+    <div className={classes.pokeResultCard}>
+      <h2>Welcome to the Pokedex</h2>
+    </div>
+  );
 };
 
-export default Pokesearch;
+export default PokeSearch;
