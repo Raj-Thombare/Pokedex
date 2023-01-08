@@ -7,15 +7,17 @@ import classes from "./Pokedex.module.css";
 const Pokedex: React.FC<{
   onPokeData: pokemonDataSchema[];
   onSearchPokemon: (text: string) => void;
-}> = ({ onPokeData, onSearchPokemon }) => {
+  onSelectPokemon: (data: string) => void;
+  selectedPokemon: string;
+}> = ({ onPokeData, onSearchPokemon, onSelectPokemon, selectedPokemon }) => {
   return (
     <div className={classes.pokedexContainer}>
       <div className={classes.pokelistContainer}>
         <Searchbox searchPokemon={onSearchPokemon} />
-        <Pokelist pokeData={onPokeData} />
+        <Pokelist pokeData={onPokeData} selectPokemon={onSelectPokemon} />
       </div>
       <div className={classes.pokedexSearch}>
-        <PokeSearch />
+        <PokeSearch selectedPokemon={selectedPokemon} />
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import Pokedex from "./components/pokedex/Pokedex";
-import { pokemonDataSchema } from "./models/interfaces";
+import { pokemonDataSchema, selectedPokemonSchema } from "./models/interfaces";
 
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
+  const [selected, setSelected] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
@@ -22,10 +23,20 @@ const App: React.FC = () => {
     setPokeData(searchedPokemon);
   };
 
+  const selectPokemonHandler = (data: string) => {
+    // console.log(data);
+    setSelected(data);
+  };
+
   return (
     <div className="App">
       <h1>Pokedex</h1>
-      <Pokedex onPokeData={pokeData} onSearchPokemon={searchPokemonHandler} />
+      <Pokedex
+        onPokeData={pokeData}
+        onSearchPokemon={searchPokemonHandler}
+        onSelectPokemon={selectPokemonHandler}
+        selectedPokemon={selected}
+      />
     </div>
   );
 };

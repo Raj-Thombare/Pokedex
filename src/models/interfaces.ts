@@ -3,20 +3,12 @@ export interface pokemonDataSchema {
   url: string;
 }
 
-interface typeName {
-  name: string;
-}
-
-interface pokemonType {
-  type: typeName;
-}
-
-export interface pokemonInfoSchema {
+export interface selectedPokemonSchema {
   name: string;
   height: number;
   weight: number;
-  types: pokemonType[];
-  spriteUrl: string;
+  spriteUrl: sprite;
+  base_experience: number;
 }
 
 interface sprite {
