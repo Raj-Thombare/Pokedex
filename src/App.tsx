@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import Pokedex from "./components/pokedex/Pokedex";
 import { pokemonDataSchema, selectedPokemonSchema } from "./models/interfaces";
 

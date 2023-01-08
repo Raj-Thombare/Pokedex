@@ -14,17 +14,26 @@ const Pokecard: React.FC<{
     fetch(spriteUrl)
       .then((response) => response.json())
       .then((data) => setPokemon(data));
-  }, [spriteUrl]);
+  }, []);
 
   return (
     <div className={classes.pokecard}>
-      <img
-        className="pokemon-sprite"
-        alt="pokemon"
-        src={pokemon?.sprites.front_default}
-        onClick={(e) => onClick(spriteUrl)}
-      />
-      <p>{pokemon?.name}</p>
+      {pokemon ? (
+        <>
+          <img
+            className="pokemon-sprite"
+            alt="pokemon"
+            src={pokemon.sprites.front_default}
+            onClick={(e) => onClick(spriteUrl)}
+          />
+          <p>{pokemon.name}</p>
+        </>
+      ) : (
+        <div className={classes.ldsRipple}>
+          <div></div>
+          <div></div>
+        </div>
+      )}
     </div>
   );
 };
