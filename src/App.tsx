@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Pokedex from "./components/pokedex/Pokedex";
-import { pokemonDataSchema, selectedPokemonSchema } from "./models/interfaces";
+import { pokemonDataSchema } from "./models/interfaces";
 
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
   const [selected, setSelected] = useState<string>("");
-  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=151")

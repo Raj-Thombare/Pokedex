@@ -1,7 +1,7 @@
 import { pokemonDataSchema } from "../../models/interfaces";
 import Pokelist from "../pokelist/Pokelist";
 import Searchbox from "../searchBox/Searchbox";
-import PokeSearch from "../PokeSeachResult/PokeSearch";
+import PokemonSearchResult from "../PokeSeachResult/PokemonSearchResult";
 import classes from "./Pokedex.module.css";
 
 const Pokedex: React.FC<{
@@ -17,7 +17,7 @@ const Pokedex: React.FC<{
         <Pokelist pokeData={onPokeData} selectPokemon={onSelectPokemon} />
       </div>
       <div className={classes.pokedexSearch}>
-        <PokeSearch selectedPokemon={selectedPokemon} />
+        <PokemonSearchResult selectedPokemon={selectedPokemon} />
       </div>
     </div>
   );

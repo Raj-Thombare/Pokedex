@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { selectedPokemonSchema } from "../../models/interfaces";
-import classes from "./PokeSearch.module.css";
+import classes from "./PokemonSearchResult.module.css";
 
-const PokeSearch: React.FC<{
+const PokemonSearch: React.FC<{
   selectedPokemon: string;
 }> = ({ selectedPokemon }) => {
-
   const [pokemon, setPokemon] = useState<selectedPokemonSchema>();
 
   useEffect(() => {
@@ -35,4 +34,4 @@ const PokeSearch: React.FC<{
   );
 };
 
-export default PokeSearch;
+export default PokemonSearch;
