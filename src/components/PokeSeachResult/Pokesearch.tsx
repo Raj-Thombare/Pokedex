@@ -5,10 +5,8 @@ import classes from "./PokeSearch.module.css";
 const PokeSearch: React.FC<{
   selectedPokemon: string;
 }> = ({ selectedPokemon }) => {
-  const [pokemon, setPokemon] = useState<selectedPokemonSchema>();
 
-  // console.log("selectedPokemon: ");
-  // console.log(selectedPokemon);
+  const [pokemon, setPokemon] = useState<selectedPokemonSchema>();
 
   useEffect(() => {
     fetch(selectedPokemon)
@@ -21,7 +19,7 @@ const PokeSearch: React.FC<{
       {selectedPokemon ? (
         <div>
           <img
-            className={classes.pokemonAnimatedSprite}
+            className={classes.pokemonSprite}
             alt="pokemon"
             src={pokemon?.sprites.front_default}
           />

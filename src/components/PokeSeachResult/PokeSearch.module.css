@@ -12,8 +12,7 @@
     font-family: 'Press Start 2P', cursive;;
 }
 
-.pokemonAnimatedSprite {
-    height: 120px;
-    width: 120px;
-    padding: 12px;
+.pokemonSprite {
+    height: 250px;
+    width: 250px;
 }
