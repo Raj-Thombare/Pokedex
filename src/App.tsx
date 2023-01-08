@@ -24,7 +24,6 @@ const App: React.FC = () => {
   };
 
   const selectPokemonHandler = (data: string) => {
-    // console.log(data);
     setSelected(data);
   };
 

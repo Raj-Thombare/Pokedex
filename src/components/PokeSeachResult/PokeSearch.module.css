@@ -16,3 +16,7 @@
     height: 250px;
     width: 250px;
 }
+
+.textCapitalise {
+    text-transform: capitalize;
+}

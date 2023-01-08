@@ -23,7 +23,7 @@ const PokeSearch: React.FC<{
             alt="pokemon"
             src={pokemon?.sprites.front_default}
           />
-          <p className="text-capitalise">Name: {pokemon?.name}</p>
+          <p className={classes.textCapitalise}>Name: {pokemon?.name}</p>
           <p>Height: {pokemon?.height}</p>
           <p>Weight: {pokemon?.weight}</p>
           <p>Base Exp: {pokemon?.base_experience}</p>
