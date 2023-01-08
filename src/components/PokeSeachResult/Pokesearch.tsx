@@ -23,7 +23,7 @@ const PokeSearch: React.FC<{
           <img
             className={classes.pokemonAnimatedSprite}
             alt="pokemon"
-            // src={pokemon?.spriteUrl.front_default}
+            src={pokemon?.sprites.front_default}
           />
           <p className="text-capitalise">Name: {pokemon?.name}</p>
           <p>Height: {pokemon?.height}</p>

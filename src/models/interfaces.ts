@@ -7,7 +7,7 @@ export interface selectedPokemonSchema {
   name: string;
   height: number;
   weight: number;
-  spriteUrl: sprite;
+  sprites: sprite;
   base_experience: number;
 }
 
