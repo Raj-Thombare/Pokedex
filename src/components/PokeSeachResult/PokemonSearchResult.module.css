@@ -20,3 +20,17 @@
 .textCapitalise {
     text-transform: capitalize;
 }
+
+@media (max-width:400px){
+    .pokemonSprite {
+     height: 250px;
+     width: 200px;
+    }
+}
+
+@media (max-width:350px){
+    .pokemonSprite {
+     height: 150px;
+     width: 150px;
+    }
+}

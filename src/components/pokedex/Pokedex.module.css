@@ -30,3 +30,15 @@
     border-radius: 1px 10px 10px 1px;
 }
 
+@media (max-width:700px){
+    .pokedexContainer{
+      min-width: 82%;
+    }
+}
+
+@media (max-width:400px){
+    .pokedexContainer{
+      min-width: 82%;
+    }
+}
+
