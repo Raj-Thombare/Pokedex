@@ -5,17 +5,22 @@ import { pokemonDataSchema } from "./models/interfaces";
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
   const [selected, setSelected] = useState<string>("");
+  const [searchField, setSearchField] = useState<string>("");
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
       .then((response) => response.json())
       .then((data) => setPokeData(data.results));
-  }, []);
+
+    searchPokemonHandler(searchField);
+  }, [searchField]);
 
   const searchPokemonHandler = (text: string) => {
+    setSearchField(text);
     const searchedPokemon = pokeData.filter((pokemon) => {
       return (
-        pokemon.name && pokemon.name.toLowerCase().includes(text.toLowerCase())
+        pokemon.name &&
+        pokemon.name.toLowerCase().includes(searchField.toLowerCase())
       );
     });
     setPokeData(searchedPokemon);

@@ -21,7 +21,6 @@ const Pokecard: React.FC<{
       {pokemon ? (
         <>
           <img
-            className="pokemon-sprite"
             alt="pokemon"
             src={pokemon.sprites.front_default}
             onClick={(e) => onClick(spriteUrl)}
