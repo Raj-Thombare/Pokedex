@@ -10,6 +10,8 @@ const Pokedex: React.FC<{
   onSelectPokemon: (data: string) => void;
   selectedPokemon: string;
 }> = ({ onPokeData, onSearchPokemon, onSelectPokemon, selectedPokemon }) => {
+
+  console.log(onPokeData);
   return (
     <div className={classes.pokedexContainer}>
       <div className={classes.pokelistContainer}>

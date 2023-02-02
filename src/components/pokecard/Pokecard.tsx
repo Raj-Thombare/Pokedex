@@ -14,7 +14,7 @@ const Pokecard: React.FC<{
     fetch(spriteUrl)
       .then((response) => response.json())
       .then((data) => setPokemon(data));
-  }, []);
+  }, [spriteUrl]);
 
   return (
     <div className={classes.pokecard}>
@@ -28,7 +28,7 @@ const Pokecard: React.FC<{
           <p>{pokemon.name}</p>
         </>
       ) : (
-        <div className={classes.ldsRipple}>
+        <div className={classes["lds-ring"]}>
           <div></div>
           <div></div>
         </div>
