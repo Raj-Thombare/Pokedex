@@ -17,14 +17,10 @@ const Pokecard: React.FC<{
   }, [spriteUrl]);
 
   return (
-    <div className={classes.pokecard}>
+    <div className={classes.pokecard} onClick={(e) => onClick(spriteUrl)}>
       {pokemon ? (
         <>
-          <img
-            alt="pokemon"
-            src={pokemon.sprites.front_default}
-            onClick={(e) => onClick(spriteUrl)}
-          />
+          <img alt="pokemon" src={pokemon.sprites.front_default} />
           <p>{pokemon.name}</p>
         </>
       ) : (
