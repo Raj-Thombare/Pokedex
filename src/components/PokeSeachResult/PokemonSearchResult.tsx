@@ -6,26 +6,46 @@ const PokemonSearch: React.FC<{
   selectedPokemon: string;
 }> = ({ selectedPokemon }) => {
   const [pokemon, setPokemon] = useState<selectedPokemonSchema>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch(selectedPokemon)
-      .then((response) => response.json())
-      .then((data) => setPokemon(data));
+    if (selectedPokemon) {
+      (async () => {
+        try {
+          setLoading(true);
+          const response = await fetch(selectedPokemon);
+          const data = await response.json();
+          setPokemon(data);
+          setLoading(false);
+        } catch (error) {
+          console.log(error);
+        }
+      })();
+    }
   }, [selectedPokemon]);
 
   return (
     <div className={classes.pokeResultCard}>
       {selectedPokemon ? (
         <div>
-          <img
-            className={classes.pokemonSprite}
-            alt="pokemon"
-            src={pokemon?.sprites.front_default}
-          />
-          <p className={classes.textCapitalise}>Name: {pokemon?.name}</p>
-          <p>Height: {pokemon?.height}</p>
-          <p>Weight: {pokemon?.weight}</p>
-          <p>Base Exp: {pokemon?.base_experience}</p>
+          {!loading ? (
+            <>
+              <img
+                className={classes.pokemonSprite}
+                alt="pokemon"
+                src={pokemon?.sprites.front_default}
+              />
+              <p className={classes.textCapitalise}>Name: {pokemon?.name}</p>
+              <p>Height: {pokemon?.height}</p>
+              <p>Weight: {pokemon?.weight}</p>
+              <p>Base Exp: {pokemon?.base_experience}</p>
+            </>
+          ) : (
+            <div className={classes["lds-ring"]}>
+              <div></div>
+              <div></div>
+            </div>
+          )}
         </div>
       ) : (
         <h2>Welcome to the Pokedex</h2>

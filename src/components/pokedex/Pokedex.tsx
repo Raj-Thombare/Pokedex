@@ -11,7 +11,6 @@ const Pokedex: React.FC<{
   selectedPokemon: string;
 }> = ({ onPokeData, onSearchPokemon, onSelectPokemon, selectedPokemon }) => {
 
-  console.log(onPokeData);
   return (
     <div className={classes.pokedexContainer}>
       <div className={classes.pokelistContainer}>

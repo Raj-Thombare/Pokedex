@@ -1,23 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Pokedex from "./components/pokedex/Pokedex";
 import { pokemonDataSchema } from "./models/interfaces";
+import { BASE_URL } from "./adapters/api";
 
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
   const [selected, setSelected] = useState<string>("");
   const [searchField, setSearchField] = useState<string>("");
 
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
-      .then((response) => response.json())
-      .then((data) => setPokeData(data.results));
-
-    searchPokemonHandler(searchField);
-  }, [searchField]);
-
   const searchPokemonHandler = (text: string) => {
     setSearchField(text);
-    const searchedPokemon = pokeData.filter((pokemon) => {
+    const searchedPokemon = pokeData?.filter((pokemon) => {
       return (
         pokemon.name &&
         pokemon.name.toLowerCase().includes(searchField.toLowerCase())
@@ -25,6 +18,22 @@ const App: React.FC = () => {
     });
     setPokeData(searchedPokemon);
   };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch(`${BASE_URL}?limit=151`);
+        const data = await response.json();
+        setPokeData(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    searchPokemonHandler(searchField);
+  }, [searchField]);
 
   const selectPokemonHandler = (data: string) => {
     setSelected(data);
