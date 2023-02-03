@@ -5,18 +5,21 @@ import { BASE_URL } from "./adapters/api";
 
 const App: React.FC = () => {
   const [pokeData, setPokeData] = useState<pokemonDataSchema[]>([]);
+  const [searchedPokemons, setSearchedPokemons] = useState<pokemonDataSchema[]>(
+    []
+  );
   const [selected, setSelected] = useState<string>("");
   const [searchField, setSearchField] = useState<string>("");
 
   const searchPokemonHandler = (text: string) => {
-    setSearchField(text);
-    const searchedPokemon = pokeData?.filter((pokemon) => {
-      return (
-        pokemon.name &&
-        pokemon.name.toLowerCase().includes(searchField.toLowerCase())
-      );
+    const searchedPokemon = pokeData.filter((pokemon) => {
+      return searchField === ""
+        ? pokemon
+        : pokemon.name.toLowerCase().includes(searchField);
     });
-    setPokeData(searchedPokemon);
+
+    setSearchField(text);
+    setSearchedPokemons(searchedPokemon);
   };
 
   useEffect(() => {
@@ -25,6 +28,7 @@ const App: React.FC = () => {
         const response = await fetch(`${BASE_URL}?limit=151`);
         const data = await response.json();
         setPokeData(data.results);
+        setSearchedPokemons(data.results);
       } catch (error) {
         console.log(error);
       }
@@ -43,7 +47,7 @@ const App: React.FC = () => {
     <div className="App">
       <h1>Pokedex</h1>
       <Pokedex
-        onPokeData={pokeData}
+        onPokeData={searchedPokemons}
         onSearchPokemon={searchPokemonHandler}
         onSelectPokemon={selectPokemonHandler}
         selectedPokemon={selected}
